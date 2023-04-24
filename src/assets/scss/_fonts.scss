@@ -1,0 +1,11 @@
+@mixin font($alias, $name, $weight) {
+  @font-face {
+    font-family: $alias;
+    src: url('../fonts/' + $name + '.woff2') format('woff2'),
+      url('../fonts/' + $name + '.woff') format('woff');
+    font-weight: $weight;
+    font-display: swap;
+  }
+}
+
+@include font('Quicksand', 'Quicksand', 400);

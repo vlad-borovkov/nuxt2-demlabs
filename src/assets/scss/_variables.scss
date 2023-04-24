@@ -1,0 +1,66 @@
+@function rem($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}rem;
+}
+
+$browser-context: 16;
+
+// fonts
+$f-heading: 'Roboto', arial, sans-serif;
+$f-text: 'Roboto', arial, sans-serif;
+
+
+
+// colors
+$c-primary: #345dee;
+
+$c-secondary: #ee3465;
+$c-dark: #0e0e2c;
+$c-success: #00a843;
+$c-subtle-text: #8c8ca1;
+$c-background: #ecf1f4;
+$c-cards: #fafcfe;
+$c-white: #fff;
+$c-link: #3d42d6;
+
+$c-text: #2F3B57;
+$c-placeholder: #8991a3;
+
+$c-blue: #4570ff;
+$c-blue-dark: #18214d;
+$c-blue-light: #45bcff;
+$c-blue-very-light: #45d2ff;
+
+$c-gray: #dfe4ea;
+$c-gray-light: #eff2f6;
+$c-gray-dark: #F6C7E1;
+
+$c-disabled-bg: #eff2f6;
+$c-disabled-border: #dfe4ea;
+$c-disabled-text: #8991a3;
+
+// outline
+$outline-shadow: 3px 2px 22px -6px rgba(0, 0, 0, 0.75);
+
+// RadioButtons
+$radio-accent: linear-gradient(90deg, #7930DE 0%, #7F65FF 100%);
+$radio-accent: $c-secondary;
+$radio-disabled: #8c8ca1;
+
+$small: 560px;
+$middle: 760px;
+$tablet: 1000px;
+$laptop: 1170px;
+$desktop: 1300px;
+$wide: 1400px;
+$large: 1800px;
+
+// breakpoints
+$xs: 380px;
+$sm: 560px;
+$smd: 780px;
+$md: 1000px;
+$slg: 1025px;
+$lg: 1285px;
+$xlg: 1370px;
+$xxlg: 1445px;
+$xxxlg: 1925px;
