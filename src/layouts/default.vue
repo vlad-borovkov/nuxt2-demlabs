@@ -2,21 +2,21 @@
   <div class="layout-default">
     <SearchLine />
     <SideBar />
-    <main style="grid-area: main">
+    <main>
       <Nuxt />
     </main>
-    <footer style="border: 1px black solid; grid-area: bottom-panel">
-      Это футер
-    </footer>
+    <BottomMenu />
   </div>
 </template>
 
 <script>
 import SearchLine from "@/components/templates/Search/index.vue";
 import SideBar from "@/components/templates/Sidebar/index.vue";
+import BottomMenu from "@/components/templates/StatusBar/index.vue";
+
 export default {
   name: "DefaultLayout",
-  components: { SearchLine, SideBar },
+  components: { SearchLine, SideBar, BottomMenu },
 };
 </script>
 
@@ -35,10 +35,9 @@ export default {
     "sidebar main"
     "bottom-panel bottom-panel";
   > main {
+    grid-area: main;
     flex: 1;
     overflow-x: auto;
-    background-color: #3c3b3b;
-    border: 1px red solid;
   }
 }
 </style>

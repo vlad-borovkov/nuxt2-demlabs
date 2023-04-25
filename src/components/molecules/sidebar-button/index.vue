@@ -1,7 +1,10 @@
 <template>
   <nuxt-link
-    :class="['sidebar-button', $route.path === button.path ? 'active' : '']"
-    :to="button.path"
+    :class="[
+      'sidebar-button',
+      $route.path === button.pathOption.path ? 'active' : '',
+    ]"
+    :to="button.pathOption"
   >
     <img :src="logoImage" alt="лого" class="sidebar-button__icon" />
     <span class="sidebar-menu__label"> {{ button.label }} </span>
@@ -38,7 +41,7 @@ export default {
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
-  background-color: #2e3138;
+
   color: #ffffff;
   &__icon {
     margin-right: 14px;

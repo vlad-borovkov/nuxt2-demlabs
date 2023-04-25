@@ -1,13 +1,13 @@
 <template>
   <div class="sidebar">
     <img src="@/assets/images/logo.svg" alt="лого" class="sidebar__logo" />
-    <div class="sidebar-menu">
+    <nav class="sidebar-menu">
       <SidebarButton
         v-for="button in menuButtons"
         :key="button.id"
         :button="button"
       />
-    </div>
+    </nav>
   </div>
 </template>
 
@@ -21,67 +21,69 @@ export default {
     return {
       menuButtons: [
         {
-          path: "/wallet",
+          pathOption: { path: "/wallet" },
           linkImg: "wallet.svg",
           label: "Wallet",
           id: "1",
         },
         {
-          path: "/dex",
+          pathOption: { path: "/dex" },
           linkImg: "dex.svg",
           label: "DEX",
           id: "2",
         },
         {
-          path: "/txexplorer",
+          pathOption: { path: "/txexplorer" },
           linkImg: "tx_explorer.svg",
           label: "TX explorer",
           id: "3",
         },
         {
-          path: "/certificates",
+          pathOption: {
+            path: "/certificates",
+          },
           linkImg: "certificats.svg",
           label: "Certificates",
           id: "4",
         },
         {
-          path: "/tokens",
+          pathOption: { path: "/tokens" },
           linkImg: "tokens.svg",
           label: "Tokens",
           id: "6",
         },
         {
-          path: "/vpnclient",
+          pathOption: { path: "/vpnclient" },
           linkImg: "vpn_client.svg",
           label: "VPN client",
           id: "7",
         },
         {
-          path: "/vpnservice",
+          pathOption: { path: "/vpnservice" },
           linkImg: "vpn_service.svg",
           label: "VPN service",
           id: "8",
         },
         {
-          path: "/console",
+          pathOption: { path: "/console" },
           linkImg: "console.svg",
           label: "Console",
           id: "9",
         },
         {
-          path: "/logs",
+          pathOption: { path: "/logs" },
           linkImg: "logs.svg",
           label: "Logs",
           id: "10",
         },
         {
-          path: "/settings",
+          pathOption: { path: "/settings" },
           linkImg: "settings.svg",
           label: "Settings",
           id: "11",
         },
         {
-          path: "/dapps",
+          pathOption: { path: "/dapps" },
           linkImg: "dapps.svg",
           label: "dApps",
           id: "12",

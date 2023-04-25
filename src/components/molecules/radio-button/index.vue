@@ -17,62 +17,39 @@
 <script lang="ts">
 import Vue, { PropType } from "vue";
 
-type RadioValueType = boolean | string | number;
-
-/**
- * ATOMS/RFRadio
- * @displayName RFRadio
- */
 export default Vue.extend({
-  name: "RFRadio",
+  name: "RadioButton",
   model: {
     event: "change",
     prop: "value",
   },
   props: {
-    /**
-     * ID of the radio
-     */
     id: {
       type: String,
       default: "",
-      required: true,
     },
-    /**
-     * Name of the radio, that uses to group them
-     */
+
     name: {
       type: String,
       default: "",
-      required: true,
     },
-    /**
-     * Disabled state of the radio
-     */
+
     disabled: {
       type: Boolean,
       default: false,
     },
-    /**
-     * Value of the radio
-     * @model
-     */
+
     value: {
-      type: [String, Number, Boolean] as PropType<RadioValueType>,
+      type: [String, Number, Boolean],
       default: "",
     },
   },
   computed: {
     model: {
-      get(): RadioValueType {
+      get() {
         return this.value;
       },
-      set(value: RadioValueType): void {
-        /**
-         * Emit the value from radio
-         * @type {function}
-         * @property {RadioValueType} value
-         */
+      set(value) {
         this.$emit("change", value);
       },
     },
@@ -86,23 +63,35 @@ export default Vue.extend({
   align-items: center;
   cursor: pointer;
 
+  &__message {
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffffff;
+  }
+
   span.rf-radio__indicator {
     position: relative;
     display: block;
     width: 16px;
     height: 16px;
-    border: 1px solid $radio-accent;
+    border: none;
     border-radius: 50%;
-    margin-right: 8px;
+    margin-right: 16px;
+    background: linear-gradient(90deg, #7930de 0%, #7f65ff 100%);
+    box-shadow: 2px 2px 5px rgba(31, 36, 47, 0.5),
+      inset 1px 1px 2px rgba(8, 7, 13, 0.24);
     &::before {
       position: absolute;
       content: "";
       top: 50%;
       left: 50%;
-      width: 8px;
-      height: 8px;
+      width: 6px;
+      height: 6px;
       transform: translate(-50%, -50%);
-      background-color: $radio-accent;
+      background-color: #363a42;
       border-radius: 50%;
       transition: 0.25s;
       opacity: 0;
@@ -117,13 +106,15 @@ export default Vue.extend({
       opacity: 1;
     }
     &:disabled ~ span.rf-radio__indicator {
-      border-color: $radio-disabled;
+      background: linear-gradient(180deg, #d6d6d6, #b3b3b3);
       &::before {
-        background-color: $radio-disabled;
+        background-color: #6f6f6f;
+        box-shadow: 2px 2px 5px rgba(8, 7, 13, 0.42),
+          inset 1px 1px 3px rgba(77, 85, 99, 0.52);
       }
     }
     &:disabled ~ span {
-      color: $radio-disabled;
+      color: #2d3037;
     }
   }
 }
