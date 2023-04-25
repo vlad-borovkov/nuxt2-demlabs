@@ -1,4 +1,4 @@
-# nux2-demlabs
+# nuxt2-demlabs
 
 ## Build Setup
 
